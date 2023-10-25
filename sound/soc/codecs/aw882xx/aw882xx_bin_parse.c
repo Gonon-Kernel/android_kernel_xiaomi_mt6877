@@ -1405,7 +1405,7 @@ int aw882xx_dev_set_profile_index(struct aw_device *aw_dev, int index)
 		aw_dev->set_prof = index;
 		aw_dev_info(aw_dev->dev, "set prof[%s]",
 			prof_info->prof_name_list[prof_info->prof_desc[index].id]);
-		aw_dev_info(aw_dev->dev, "[spk_sw_gpio] prof index:",index);
+		//aw_dev_info(aw_dev->dev, "[spk_sw_gpio] prof index:",index);
 
 	}
 

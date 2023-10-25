@@ -2847,7 +2847,7 @@ void mtk_crtc_pkt_create(struct cmdq_pkt **cmdq_handle, struct drm_crtc *crtc,
 {
 	*cmdq_handle = cmdq_pkt_create(cl);
 	if (IS_ERR_OR_NULL(*cmdq_handle)) {
-		DDPPR_ERR("%s create handle fail, %x\n",
+		DDPPR_ERR("%s create handle fail, %s\n",
 				__func__, *cmdq_handle);
 		return;
 	}
@@ -5508,7 +5508,7 @@ struct cmdq_pkt *mtk_crtc_gce_commit_begin(struct drm_crtc *crtc)
 						IRQ_LEVEL_IDLE, NULL);
 		}
 
-		DDPMSG("%s sec dapc:%d port:%u\n", __func__, sec_disp_dapc,
+		DDPMSG("%s sec dapc:%llx port:%llx\n", __func__, sec_disp_dapc,
 			sec_disp_port);
 		cmdq_sec_pkt_set_data(cmdq_handle, sec_disp_dapc,
 			sec_disp_port, sec_disp_type,
@@ -6766,7 +6766,7 @@ void mtk_crtc_vblank_irq(struct drm_crtc *crtc)
  *		hwc_pid, 0);
  *	mtk_drm_trace_c("%s", tag_name);
  */
-	mtk_drm_trace_c("%d|DISP-HW_Vsync|%lld",
+	mtk_drm_trace_c("%d|DISP-HW_Vsync|%d",
 		hwc_pid, 0);
 }
 
@@ -6999,7 +6999,7 @@ static int mtk_drm_cwb_copy_buf(struct drm_crtc *crtc,
 		tmp->meta.timestamp = cwb_info->buffer[buf_idx].timestamp;
 		memcpy(tmp->data.image, (void *)addr_va, size);
 	}
-	DDPMSG("[capture] copy buf from 0x%x, (w,h)=(%d,%d), ts:%llu done\n",
+	DDPMSG("[capture] copy buf from 0x%lx, (w,h)=(%d,%d), ts:%llu done\n",
 			addr_va, width, height, time);
 
 	return 0;

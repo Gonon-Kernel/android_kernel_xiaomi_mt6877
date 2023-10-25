@@ -127,7 +127,7 @@ static int aw_cali_get_read_cali_re(int32_t *cali_re, int channel)
 	}else{
 		pos = AW_INT_DEC_DIGIT_2;
 	}
-	pr_info("%s: channel:%d pos:%d \n", __func__,channel,pos);
+	pr_info("%s: channel:%d pos:%lld \n", __func__,channel,pos);
 
 	/*node = fp->f_dentry->d_inode;*/
 	/*f_size = node->i_size;*/

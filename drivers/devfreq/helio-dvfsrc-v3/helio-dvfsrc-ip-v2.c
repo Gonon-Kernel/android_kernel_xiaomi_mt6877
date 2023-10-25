@@ -284,7 +284,7 @@ int commit_data(int type, int data, int check_spmfw)
 					get_cur_vcore_dvfs_opp()); /* TODO */
 
 					aee_kernel_warning("DVFSRC",
-						"VCORE failed.",
+						"%s: failed.",
 						__func__);
 				}
 			}

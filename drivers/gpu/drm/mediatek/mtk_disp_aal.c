@@ -2504,7 +2504,8 @@ static void mtk_aal_prepare(struct mtk_ddp_comp *comp)
 	if (comp->id == DDP_COMPONENT_AAL1)
 		atomic_set(&g_aal1_data->is_clock_on, 1);
 	AALFLOW_LOG("[aal_data, g_aal_data] addr[%x, %x] val[%d, %d]\n",
-			&aal_data->is_clock_on, &g_aal_data->is_clock_on,
+			atomic_read(&aal_data->is_clock_on),
+			atomic_read(&g_aal_data->is_clock_on),
 			atomic_read(&aal_data->is_clock_on),
 			atomic_read(&g_aal_data->is_clock_on));
 

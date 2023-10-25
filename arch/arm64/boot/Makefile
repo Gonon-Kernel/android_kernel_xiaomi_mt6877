@@ -57,7 +57,7 @@ $(obj)/Image.lzma: $(obj)/Image FORCE
 $(obj)/Image.lzo: $(obj)/Image FORCE
 	$(call if_changed,lzo)
 
-$(obj)/Image.gz-dtb: $(obj)/Image.gz $(DTB_OBJS) FORCE
+$(obj)/Image.gz-dtb: $(obj)/Image.gz $(DTB_OBJS) $(DTBO_OBJS) FORCE
 	$(call if_changed,cat)
 
 $(obj)/dtbo.img: $(DTBO_OBJS) FORCE

@@ -1350,11 +1350,11 @@ static void _ovl_common_config(struct mtk_ddp_comp *comp, unsigned int idx,
 				cmdq_pkt_write(handle, comp->cmdq_base,
 					comp->regs_pa + OVL_LAYER_EXT_DOMAIN,
 					domain_val, domain_mask);
-				DDPINFO("%s:%d,EL%dSet dom(0x%llx,0x%x,0x%x),addr(0x%s+0x%x),sz:%d\n",
+				DDPINFO("%s:%d,EL%dSet dom(0x%llx,0x%x,0x%x),addr(0x+0x%x),sz:%d\n", // disabled argument 8
 					__func__, __LINE__, id,
 					comp->regs_pa + OVL_LAYER_EXT_DOMAIN,
 					domain_val, domain_mask,
-					&pending->addr,
+					//&pending->addr, // disabled argument 8
 					offset,
 					size);
 #endif

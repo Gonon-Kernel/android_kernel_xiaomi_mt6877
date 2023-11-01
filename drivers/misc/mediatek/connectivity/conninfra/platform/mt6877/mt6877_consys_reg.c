@@ -57,7 +57,7 @@ static const char* consys_base_addr_index_to_str[CONSYS_BASE_ADDR_MAX] = {
 	"conn_bcrm_on",
 };
 
-struct consys_base_addr* get_conn_reg_base_addr(void)
+struct consys_base_addr* get_conn_reg_base_addr()
 {
 	return &conn_reg;
 }

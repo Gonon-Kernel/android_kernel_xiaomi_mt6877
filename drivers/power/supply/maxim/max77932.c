@@ -59,12 +59,12 @@
 #define MAX77932_OOVP_5_3V		0x15
 #define MAX77932_OOVP_5_5V		0x17
 
-enum pr_name {
+enum product_name {
 	UNKNOW,
 	RUBY,
 	RUBYPRO,
 	RUBYPLUS,
-} product_name;
+};
 
 struct max77932_chip {
 	struct device 		*dev;
@@ -84,6 +84,7 @@ enum max77932_ovp {
 	MAX77932_OVP_11_0V,
 };
 
+product_name = UNKNOW;
 static int log_level = 2;
 
 #define max_err(fmt, ...)							\
